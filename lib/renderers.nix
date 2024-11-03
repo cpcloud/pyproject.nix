@@ -182,7 +182,7 @@ in
         // optionalAttrs (project.projectRoot != null) { src = project.projectRoot; }
         // optionalAttrs (pyproject.project ? version) { inherit (pyproject.project) version; }
         // {
-          disabled = ((lib.traceVal project.requires-python) != null) && !lib.all (spec: pep440.comparators.${spec.op} (lib.traceVal pythonVersion) spec.version) project.requires-python;
+          disabled = assert false; ((lib.traceVal project.requires-python) != null) && !lib.all (spec: pep440.comparators.${spec.op} (lib.traceVal pythonVersion) spec.version) project.requires-python;
         }
       )
       (attrNames filteredDeps.extras);
