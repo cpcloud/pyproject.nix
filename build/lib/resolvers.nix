@@ -88,8 +88,10 @@ in
                 name' = elemAt m 1;
                 extras' = pkg.passthru.optional-dependencies.${name'} or { };
                 groups' = pkg.passthru.dependency-groups.${name'} or { };
+                nn = builtins.trace pkg.name name';
+                disabled = lib.traceVal (set.${nn}.disabled or false);
               in
-              throwIf (extras' == { } && groups' == { })
+              throwIf (!disabled && extras' == { } && groups' == { })
                 "Extra/group name '${name'}' does not match either extra or dependency group"
                 (
                   concatMap (name: [ (mkKey name) ] ++ map (extra: mkKey "${name}@${extra}") extras'.${name}) (
