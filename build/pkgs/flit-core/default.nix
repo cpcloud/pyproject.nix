@@ -8,7 +8,6 @@ stdenv.mkDerivation {
     pname
     version
     src
-    sourceRoot
     meta
     ;
   nativeBuildInputs = [
