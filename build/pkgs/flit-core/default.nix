@@ -10,7 +10,6 @@ stdenv.mkDerivation rec {
     src
     meta
     patches
-    format
     ;
   prePatch = "exit 1";
   postPatch = "exit 1";#cd flit_core";
