@@ -9,9 +9,7 @@ stdenv.mkDerivation {
     version
     src
     meta
-    patches
     ;
-  sourceRoot = python3Packages.flit-core.sourceRoot or null;
   nativeBuildInputs = [
     pyprojectHook
   ];
