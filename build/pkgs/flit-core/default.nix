@@ -8,9 +8,9 @@ stdenv.mkDerivation {
     pname
     version
     src
-    sourceRoot
     meta
     ;
+  sourceRoot = python3Packages.flit-core.sourceRoot or null;
   nativeBuildInputs = [
     pyprojectHook
   ];
