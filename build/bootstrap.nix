@@ -43,6 +43,7 @@ let
   bootstrap = {
     flit-core = buildBootstrapPackage python3Packages.flit-core {
       postPatch = "cd flit_core";
+      sourceRoot = "${python3Packages.flit-core.src.name}/flit_core";
       buildPhase = ''
         runHook preBuild
         ${python.interpreter} -m flit_core.wheel
