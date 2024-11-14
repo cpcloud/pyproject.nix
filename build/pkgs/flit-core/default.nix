@@ -4,10 +4,13 @@
   pyprojectHook,
 }:
 stdenv.mkDerivation {
-  pname = "flit-core";
-  format = "pyproject";
-  inherit (python3Packages.flit) src patches version;
-  inherit (python3Packages.flit-core) meta postPatch;
+  inherit (python3Packages.flit-core)
+    pname
+    version
+    src
+    sourceRoot
+    meta
+    ;
   nativeBuildInputs = [
     pyprojectHook
   ];
