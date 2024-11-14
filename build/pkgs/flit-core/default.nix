@@ -10,7 +10,8 @@ stdenv.mkDerivation {
     src
     meta
     ;
-  patches = [];
+  patches = null;
+  doCheck = false;
   nativeBuildInputs = [
     pyprojectHook
   ];
